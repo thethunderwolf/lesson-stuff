@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+</head>
+<body>
+<h1>Random Number</h1>
+
+<p id="randomNumber">Your random number will appear here!</p>
+
+<script>
+
+let randomNumber = Math.floor((Math.random()*900)+100) // create a 3 digit random number: 100 to 999
+// Math.random() picks a number starting at 0 (inclusive) and 1 (exclusive)
+
+document.getElementById("randomNumber").textContent = "The random number is: "+randomNumber
+
+</script>
+</body>
+</html>
