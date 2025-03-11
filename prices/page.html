@@ -40,7 +40,7 @@
 		const selectedOption2 = dropdown2.options[dropdown2.selectedIndex]
 		const drinkPrice = selectedOption2.getAttribute("data-price")
 		
-		const formattedPrice = (snackPrice+drinkPrice)
+		const formattedPrice = (parseInt(snackPrice)+parseInt(drinkPrice))
 		const totalPrice = document.getElementById("total").textContent = "Price: ₡"+ formattedPrice
 	}
 
