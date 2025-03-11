@@ -3,60 +3,45 @@
 
 <label>Choose a Snack:</label>
 
-<select id="snack" onchange="snackPriceCal()"> 
+<select id="snack" onchange="priceCalc()"> 
 <option>NONE</option>
-<option value= "chips" data-price="1.50">chips [$1.50]</option>
-<option value= "cookies" data-price="2.00">cookies [$2.00]</option>
+<option value= "chips" data-price="600">chips [₡600]</option>
+<option value= "cookies" data-price="1500">cookies [₡1500]</option>
 
 </select>
 <br>
 
 <label>Choose a Drink:</label>
 
-<select id="drink" onchange="drinkPriceCal()"> 
+<select id="drink" onchange="priceCalc()"> 
 <option>NONE</option>
-<option value= "fanta" data-price="1.50">fanta [$1.50]</option>
-<option value= "coke" data-price="2.00">coke [$2.00]</option>
+<option value= "water" data-price="400">water [₡400]</option>
+<option value= "lemonade" data-price="1250">lemonade [₡1250]</option>
 
 </select>
 
-<p id = "total">Snack Price: $0.00</p>
-
-<p id = "totalDrink">Drink Price: $0.00</p>
-
-<p id = "totalAll">Total Price: $0.00</p>
+<p id = "total">Price: $0.00</p>
 
 <script>
-  function showName() {
-    const params = new URLSearchParams(window.location.search); Extracts query parameters from the URL.
-    const name = params.get("name") || "Guest";
-    document.getElementById("displayName").textContent = "Welcome, " + name;
+	function showName() {
+		const params = new URLSearchParams(window.location.search);
+		const name = params.get("name") || "Guest";
+		document.getElementById("displayName").textContent = "Welcome, " + name;
+	}
 
 	
-	function snackPriceCal(){
+	function priceCalc(){
 		
 		const dropdown = document.querySelector("#snack")
 		const selectedOption = dropdown.options[dropdown.selectedIndex]
 		const snackPrice = selectedOption.getAttribute("data-price")
-		const actualPrice = parseFloat(snackPrice)
-		const formattedPrice = actualPrice.toFixed(2)
-		const totalPrice = document.getElementById("total").textContent = "Snack Price: $"+ formattedPrice
-		totalPriceCal()
-	}
-	
-	function drinkPriceCal(){
 		
-		const dropdown = document.querySelector("#drink")
-		const selectedOption = dropdown.options[dropdown.selectedIndex]
-		const drinkPrice = selectedOption.getAttribute("data-price")
-		const actualPrice = parseFloat(drinkPrice)
-		const formattedPrice = actualPrice.toFixed(2)
-		const totalPrice = document.getElementById("totalDrink").textContent = "Drink Price: $"+ formattedPrice
-		totalPriceCal()
-	}
-			
-	function totalPriceCal(){
+		const dropdown2 = document.querySelector("#drink")
+		const selectedOption2 = dropdown2.options[dropdown2.selectedIndex]
+		const drinkPrice = selectedOption2.getAttribute("data-price")
 		
+		const formattedPrice = (snackPrice+drinkPrice)
+		const totalPrice = document.getElementById("total").textContent = "Price: ₡"+ formattedPrice
 	}
 
 </script>
