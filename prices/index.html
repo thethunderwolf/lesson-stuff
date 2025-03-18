@@ -2,13 +2,15 @@
   <body>
     
     <input type="text" id="name" placeholder="Your Name">
+    <input type="text" id="timezone" placeholder="Your Timezone">
     
     <button onclick="goToNextPage()">Submit</button>
     
     <script>
         function goToNextPage() {
           const name = document.getElementById("name").value;
-          window.location.href = "page.html?name=" + encodeURIComponent(name);
+          const tz = document.getElementById("timezone").value;
+          window.location.href = "page.html?name=" + encodeURIComponent(name) + "&tz=" + encodeURIComponent(tz);
         }
     </script>
     
