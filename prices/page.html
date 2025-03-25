@@ -21,6 +21,7 @@
 </select>
 
 <p id = "total">Price: $0.00</p>
+<button onclick="pay()">Pay</button>
 
 <script>
 	function showName() {
@@ -42,6 +43,12 @@
 		
 		const formattedPrice = (parseInt(snackPrice)+parseInt(drinkPrice))
 		const totalPrice = document.getElementById("total").textContent = "Price: ₡"+ formattedPrice
+	}
+	function pay() {
+		const snack = document.querySelector("#snack").getAttribute("data-price")
+		const drink = document.querySelector("#drink").getAttribute("data-price")
+		const price = (parseInt(snack)+parseInt(drink));
+		window.location.href = "checkout.html?price=" + encodeURIComponent(price);
 	}
 
 </script>
