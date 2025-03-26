@@ -9,18 +9,25 @@
 
       function showPrice() {
 		const params = new URLSearchParams(window.location.search);
-		const price = params.get("price") || "Error";
-		document.getElementById("pay").textContent = "Pay ₡" + price;
+		const price = parseInt(params.get("price")) || "Error";
+	      if (typeOf(price) != int || price == NaN){
+		document.getElementById("pay").textContent = "Payment Calculation Error";
+			}
+	      else { 
+		      document.getElementById("pay").textContent = "Pay ₡" + price;
+		   }
 		}
 
         function pay() {
   		  const params = new URLSearchParams(window.location.search);
-  		  const price = params.get("price") || "Error";
-        if (price === "Error"){
+  		  const price = parseInt(params.get("price")) || "Error";
+        if (typeOf(price) != int || price == NaN){
           document.getElementById("payplease").textContent = "Payment Failed"
+		alert("Failed payment :(")
         }
         else {
           document.getElementById("payplease").textContent = "Payment Successful"
+		alert("Payment successful. Thank you for shopping with us.")
         }
         };
     </script>
