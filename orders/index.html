@@ -1,16 +1,23 @@
 <body>
+
+	<h2>Customize Pizza:</h2>
 	
 	<form>
-		<h2>Select pizza size (Both means Medium)</h2>
-		<label><input type="checkbox" value="large"> Large</label><br>
-		<label><input type="checkbox" value="small"> Small</label><br>
+		<h4>Choose a size of your choice...</h4>
 		
-		<h2>Select pizza toppings</h2>
-		<label><input type="checkbox" value="mushrooms"> Mushrooms</label><br>
-		<label><input type="checkbox" value="olives"> Olives</label><br>
-		<label><input type="checkbox" value="pineapple"> Pineapple</label><br>
-		<label><input type="checkbox" value="onion"> Onion</label><br>
-		<label><input type="checkbox" value="bell-pepper"> Bell Pepper</label><br>
-		<label><input type="checkbox" value="jalapeno"> Jalapeño Pepper</label><br>
+		<label><input type="radio" name="pizza-size" value="large"> Large</label><br>
+		<label><input type="radio" name="pizza-size" value="medium"> Medium</label><br>
+		<label><input type="radio" name="pizza-size" value="small"> Small</label><br>
+
+		<h4>Choose your toppings...</h4>
+
+		<label><input type="checkbox" name="toppings" value="mushroom"> Mushroom</label><br>
+		<label><input type="checkbox" name="toppings" value="onion"> Grilled Onion</label><br>
+		<label><input type="checkbox" name="toppings" value="olive"> Olive</label><br>
+		<label><input type="checkbox" name="toppings" value="pineapple"> Pineapple</label><br>
+		
 	</form>
+
+	<p>Selected: None</p>
+	
 </body>
