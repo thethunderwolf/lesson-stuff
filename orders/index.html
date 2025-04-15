@@ -18,6 +18,20 @@
 		
 	</form>
 
-	<p>Selected: None</p>
+	<p id="size">Size: None</p>
+	
+	<script>
+		
+		document.querySelector('input[value="large"]').addEventListener('change', function(){
+			document.getElementById('size').textContent = "Size: large"
+		})
+		document.querySelector('input[value="medium"]').addEventListener('change', function(){
+			document.getElementById('size').textContent = "Size: medium"
+		})
+		document.querySelector('input[value="small"]').addEventListener('change', function(){
+			document.getElementById('size').textContent = "Size: small"
+		})
+			
+	</script>
 	
 </body>
