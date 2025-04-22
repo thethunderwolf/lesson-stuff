@@ -33,9 +33,9 @@
 		
 		const sizeChoices = document.querySelectorAll('input[name = "size"]');
 		const sizeTag = document.getElementById("size");
-		sizeChoices.forEach(i =>{
-		i.addEventListener('change',() =>{
-		sizeTag.textContent = "Size: "+ i.value;
+		sizeChoices.forEach(button =>{
+		button.addEventListener('change',() =>{
+		sizeTag.textContent = "Size: "+ button.value;
 		})
 		})
 			
