@@ -34,9 +34,11 @@
 		
 		const sizeChoices = document.querySelectorAll('input[name = "size"]');
 		const sizeTag = document.getElementById("size");
+		const priceTag = document.getElementById("price");
 		sizeChoices.forEach(button =>{
 		button.addEventListener('change',() =>{
 		sizeTag.textContent = "Size: "+ button.value.split("|")[0];
+		priceTag.textContent = "Price: ₡"+ button.value.split("|")[1];
 		})
 		})
 			
