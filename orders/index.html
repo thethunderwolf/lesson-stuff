@@ -35,7 +35,7 @@
 		const sizeTag = document.getElementById("size");
 		sizeChoices.forEach(button =>{
 		button.addEventListener('change',() =>{
-		sizeTag.textContent = "Size: "+ button.value;
+		sizeTag.textContent = "Size: "+ button.value.split("|")[0];
 		})
 		})
 			
