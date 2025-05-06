@@ -20,10 +20,12 @@
 
 		<h4>Choose your toppings...</h4>
 
-		<label><input type="checkbox" name="toppings" value="mushroom"> Mushroom</label><br>
-		<label><input type="checkbox" name="toppings" value="onion"> Grilled Onion</label><br>
-		<label><input type="checkbox" name="toppings" value="olive"> Olive</label><br>
-		<label><input type="checkbox" name="toppings" value="pineapple"> Pineapple</label><br>
+		<label><input type="checkbox" name="toppings" value="mushroom|100" id=""> Mushroom</label><br>
+		<label><input type="checkbox" name="toppings" value="jalapeno|0" id=""> Jalapeño Pepper</label><br>
+		<label><input type="checkbox" name="toppings" value="bellpepper|0" id=""> Bell Pepper</label><br>
+		<label><input type="checkbox" name="toppings" value="onion|00" id=""> Grilled Onion</label><br>
+		<label><input type="checkbox" name="toppings" value="olive|50" id=""> Olive</label><br>
+		<label><input type="checkbox" name="toppings" value="pineapple|0" id=""> Pineapple</label><br>
 		
 	</form>
 
@@ -32,16 +34,34 @@
 	
 	<script>
 		
-		const sizeChoices = document.querySelectorAll('input[name = "size"]');
-		const sizeTag = document.getElementById("size");
-		const priceTag = document.getElementById("price");
+		const sizeChoices = document.querySelectorAll('input[name = "size"]')
+		const toppingChoices = document.querySelectorAll('input[name = "toppings"]')
+		const priceChangerElements = document.querySelectorAll('input[name = "size"]'||'input[name = "toppings"]')
+		const sizeTag = document.getElementById("size")
+		const priceTag = document.getElementById("price")
+		var price = 0
+		
 		sizeChoices.forEach(button =>{
 		button.addEventListener('change',() =>{
-		sizeTag.textContent = "Size: "+ button.value.split("|")[0];
-		priceTag.textContent = "Price: ₡"+ button.value.split("|")[1];
+		
+		price = button.value.split("|")[1]
+		
+		sizeTag.textContent = "Size: "+ button.value.split("|")[0]
+		priceTag.textContent = "Price: ₡"+ price
+		
 		})
 		})
-			
+		sizeChoices.forEach(button =>{
+		button.addEventListener('change',() =>{
+		
+		price = button.value.split("|")[1]
+		
+		sizeTag.textContent = "Size: "+ button.value.split("|")[0]
+		priceTag.textContent = "Price: ₡"+ price
+		
+		})
+		})
+		
 	</script>
 	
 </body>
