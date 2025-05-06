@@ -20,49 +20,68 @@
 
 		<h4>Choose your toppings...</h4>
 
-		<label><input type="checkbox" name="toppings" value="mushroom|100" id=""> Mushroom</label><br>
-		<label><input type="checkbox" name="toppings" value="jalapeno|0" id=""> Jalapeño Pepper</label><br>
-		<label><input type="checkbox" name="toppings" value="bellpepper|0" id=""> Bell Pepper</label><br>
-		<label><input type="checkbox" name="toppings" value="onion|00" id=""> Grilled Onion</label><br>
-		<label><input type="checkbox" name="toppings" value="olive|50" id=""> Olive</label><br>
-		<label><input type="checkbox" name="toppings" value="pineapple|0" id=""> Pineapple</label><br>
+		<label><input type="checkbox" name="topping" value="Mushrooms|100" id=""> Mushrooms</label><br>
+		<label><input type="checkbox" name="topping" value="Jalapeño Peppers|0" id=""> Jalapeño Peppers</label><br>
+		<label><input type="checkbox" name="topping" value="Bell Peppers|0" id=""> Bell Peppers</label><br>
+		<label><input type="checkbox" name="topping" value="Grilled Onion|00" id=""> Grilled Onion</label><br>
+		<label><input type="checkbox" name="topping" value="Olives|50" id=""> Olives</label><br>
+		<label><input type="checkbox" name="topping" value="Pineapple|0" id=""> Pineapple</label><br>
 		
 	</form>
 
 	<p id="size">Size: None</p>
+	<p id="toppings">Size: None</p>
 	<p id="price">Price: ₡0</p>
 	
 	<script>
 		
 		const sizeChoices = document.querySelectorAll('input[name = "size"]')
-		const toppingChoices = document.querySelectorAll('input[name = "toppings"]')
-		const priceChangerElements = document.querySelectorAll('input[name = "size"]'||'input[name = "toppings"]')
+		const toppingChoices = document.querySelectorAll('input[name = "topping"]')
+		const priceChangerElements = document.querySelectorAll('input[name = "size"]'||'input[name = "topping"]')
 		const sizeTag = document.getElementById("size")
 		const priceTag = document.getElementById("price")
+		const toppingTag = document.getElementById("toppings")
 		var price = 0
 		var basePrice = 0
 		var addedPrice = 0
 		
-		toppingChoices.forEach(button =>{
-		button.addEventListener('change',() =>{
+		function updateToppings() {
+			const selectedToppings = [];
+			var workingPrice = 0
+			
+			toppingChoices.forEach(checkbox => {
+				if (checkbox.checked) {
+					selectedToppings.push(checkbox.value.split("|")[0]);
+					workingPrice += parseInt(checkbox.value.split("|")[1])
+					
+				}
+			});
+			if (selectedToppings.length > 0) {
+				toppingTag.textContent = "Topping(s) Selected: " + selectedToppings.join(', ');
+			}
+			else {
+				toppingTag.textContent = "Topping(s) Selected: None";
+			}
+		}
+
+		priceChangerChoices.forEach(button =>{
 		
-		basePrice = button.value.split("|")[1]
+			button.addEventListener('change',() =>{
+			
+			addedPrice = updateToppings()
+				
+			sizeChoices.forEach(button =>{
+			
+				basePrice = button.value.split("|")[1]
+				sizeTag.textContent = "Size: "+ button.value.split("|")[0]
+				
+			})
+			
+			price = basePrice + addedPrice
+			priceTag.textContent = "Price: ₡"+ price
+		})})
 		
-		sizeTag.textContent = "Size: "+ button.value.split("|")[0]
-		priceTag.textContent = "Price: ₡"+ price
 		
-		})
-		})
-		sizeChoices.forEach(button =>{
-		button.addEventListener('change',() =>{
-		
-		price = button.value.split("|")[1]
-		
-		sizeTag.textContent = "Size: "+ button.value.split("|")[0]
-		priceTag.textContent = "Price: ₡"+ price
-		
-		})
-		})
 		
 	</script>
 	
