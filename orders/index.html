@@ -62,6 +62,7 @@
 			else {
 				toppingTag.textContent = "Topping(s) Selected: None";
 			}
+			return workingPrice
 		}
 
 		priceChangerChoices.forEach(button =>{
@@ -72,7 +73,7 @@
 				
 			sizeChoices.forEach(button =>{
 			
-				basePrice = button.value.split("|")[1]
+				basePrice = parseInt(button.value.split("|")[1])
 				sizeTag.textContent = "Size: "+ button.value.split("|")[0]
 				
 			})
