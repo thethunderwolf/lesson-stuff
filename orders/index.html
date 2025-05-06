@@ -40,11 +40,13 @@
 		const sizeTag = document.getElementById("size")
 		const priceTag = document.getElementById("price")
 		var price = 0
+		var basePrice = 0
+		var addedPrice = 0
 		
-		sizeChoices.forEach(button =>{
+		toppingChoices.forEach(button =>{
 		button.addEventListener('change',() =>{
 		
-		price = button.value.split("|")[1]
+		basePrice = button.value.split("|")[1]
 		
 		sizeTag.textContent = "Size: "+ button.value.split("|")[0]
 		priceTag.textContent = "Price: ₡"+ price
