@@ -72,10 +72,10 @@
 			addedPrice = updateToppings()
 				
 			sizeChoices.forEach(button =>{
-			
-				basePrice = parseInt(button.value.split("|")[1])
-				sizeTag.textContent = "Size: "+ button.value.split("|")[0]
-				
+				if (button.checked){
+					basePrice = parseInt(button.value.split("|")[1])
+					sizeTag.textContent = "Size: "+ button.value.split("|")[0]
+				}
 			})
 			
 			price = basePrice + addedPrice
