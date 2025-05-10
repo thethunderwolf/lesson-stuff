@@ -38,7 +38,6 @@
 		// arrays of elemts for iteration
 		const sizeChoices = document.querySelectorAll('input[name = "size"]')
 		const toppingChoices = document.querySelectorAll('input[name = "topping"]')
-		const priceChangerChoices = document.querySelectorAll('input[name = "size"]'||'input[name = "topping"]')
 		// paragraph tags to modify
 		const sizeTag = document.getElementById("size")
 		const priceTag = document.getElementById("price")
@@ -47,6 +46,17 @@
 		var price = 0
 		var basePrice = 0
 		var addedPrice = 0
+
+		toppingChoices.forEach(button =>{
+		
+			button.addEventListener('change',() =>{
+
+				addedPrice = updateToppings()
+				price = basePrice + addedPrice
+				priceTag.textContent = "Price: ₡"+ price
+
+			})
+		})
 		
 		function updateToppings() {
 			
@@ -55,9 +65,7 @@
 			toppingChoices.forEach(checkbox => {
 				if (checkbox.checked) {
 					selectedToppings.push(checkbox.value.split("|")[0])
-					console.log(selectedToppings)
 					workingPrice += parseInt(checkbox.value.split("|")[1])
-					console.log(workingPrice)
 					
 				}
 			})
@@ -71,23 +79,22 @@
 			return workingPrice
 		}
 
-		priceChangerChoices.forEach(button =>{
+		sizeChoices.forEach(button =>{
 		
 			button.addEventListener('change',() =>{
 			
-			addedPrice = updateToppings()
-			console.log(addedPrice)
-				
-			sizeChoices.forEach(i =>{
-				if (i.checked){
-					basePrice = parseInt(i.value.split("|")[1])
-					sizeTag.textContent = "Size: "+ i.value.split("|")[0]
-				}
-			})
+				sizeChoices.forEach(i =>{
+					if (i.checked){
+						basePrice = parseInt(i.value.split("|")[1])
+						sizeTag.textContent = "Size: "+ i.value.split("|")[0]
+					}
+				})
 			
 			price = basePrice + addedPrice
 			priceTag.textContent = "Price: ₡"+ price
-		})})
+			
+			})
+		})
 		
 		
 		
