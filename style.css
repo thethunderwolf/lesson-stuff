@@ -28,7 +28,7 @@ button {
 }
 
 .large-section {
-	margin: 10px
+	margin: 10px;
 	border: 6px outset #B0B0FF;
 	background: #303030;
 	background: -moz-linear-gradient(-45deg, #303030 0%, #000040 50%, #101010 100%);
@@ -36,7 +36,7 @@ button {
 	background: linear-gradient(135deg, #303030 0%, #000040 50%, #101010 100%);
 }
 .medium-section {
-	margin: 8px
+	margin: 8px;
 	border: 5px inset #A0F0F0;
 	background: #091414;
 	background: -moz-linear-gradient(45deg, #091414 0%, #003737 50%, #080808 100%);
@@ -44,7 +44,7 @@ button {
 	background: linear-gradient(45deg, #091414 0%, #003737 50%, #080808 100%);
 }
 .small-section {
-	margin: 6px
+	margin: 6px;
 	border: 5px ridge #A0FBA9;
 	background: #061f06;
 	background: -moz-linear-gradient(top, #061f06 0%, #113711 50%, #101B10 100%);
