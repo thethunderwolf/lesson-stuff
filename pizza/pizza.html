@@ -11,29 +11,31 @@
 <body>
 
 	<h2>Customize Pizza:</h2>
+	<div class = "large-section">
+		<form>
+			<h4>Choose a size of your choice...</h4>
+			
+			<label><input type="radio" name="size" value="Large|4500"> Large</label><br>
+			<label><input type="radio" name="size" value="Medium|3500"> Medium</label><br>
+			<label><input type="radio" name="size" value="Small|2500"> Small</label><br>
 	
-	<form>
-		<h4>Choose a size of your choice...</h4>
-		
-		<label><input type="radio" name="size" value="Large|4500"> Large</label><br>
-		<label><input type="radio" name="size" value="Medium|3500"> Medium</label><br>
-		<label><input type="radio" name="size" value="Small|2500"> Small</label><br>
-
-		<h4>Choose your toppings...</h4>
-
-		<label><input type="checkbox" name="topping" value="Mushrooms|100" id=""> Mushrooms</label><br>
-		<label><input type="checkbox" name="topping" value="Jalapeño Peppers|0" id=""> Jalapeño Peppers</label><br>
-		<label><input type="checkbox" name="topping" value="Bell Peppers|0" id=""> Bell Peppers</label><br>
-		<label><input type="checkbox" name="topping" value="Grilled Onion|00" id=""> Grilled Onion</label><br>
-		<label><input type="checkbox" name="topping" value="Olives|50" id=""> Olives</label><br>
-		<label><input type="checkbox" name="topping" value="Pineapple|0" id=""> Pineapple</label><br>
-		
-	</form>
-
-	<p id="size">Size: None</p>
-	<p id="toppings">Topping(s) Selected: None</p>
-	<p id="price">Price: ₡0</p>
-	<p>Add a tip: <input type="number" id="tip"></p>
+			<h4>Choose your toppings...</h4>
+	
+			<label><input type="checkbox" name="topping" value="Mushrooms|100" id=""> Mushrooms</label><br>
+			<label><input type="checkbox" name="topping" value="Jalapeño Peppers|0" id=""> Jalapeño Peppers</label><br>
+			<label><input type="checkbox" name="topping" value="Bell Peppers|0" id=""> Bell Peppers</label><br>
+			<label><input type="checkbox" name="topping" value="Grilled Onion|00" id=""> Grilled Onion</label><br>
+			<label><input type="checkbox" name="topping" value="Olives|50" id=""> Olives</label><br>
+			<label><input type="checkbox" name="topping" value="Pineapple|0" id=""> Pineapple</label><br>
+			
+		</form>
+	
+		<p id="size">Size: None</p>
+		<p id="toppings">Topping(s) Selected: None</p>
+		<p id="price">Price: ₡0</p>
+		<p>Add a tip: <input type="number" id="tip"></p>
+			
+	</div>
 	
 	<script>
 
