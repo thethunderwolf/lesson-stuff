@@ -30,6 +30,7 @@ button {
 .large-section {
 	margin: 10px;
 	border: 6px outset #B0B0FF;
+	padding: 5px;
 	background: #303030;
 	background: -moz-linear-gradient(-45deg, #303030 0%, #000040 50%, #101010 100%);
 	background: -webkit-linear-gradient(-45deg, #303030 0%, #000040 50%, #101010 100%);
@@ -38,6 +39,7 @@ button {
 .medium-section {
 	margin: 8px;
 	border: 5px inset #A0F0F0;
+	padding: 4px;
 	background: #091414;
 	background: -moz-linear-gradient(45deg, #091414 0%, #003737 50%, #080808 100%);
 	background: -webkit-linear-gradient(45deg, #091414 0%, #003737 50%, #080808 100%);
@@ -46,6 +48,7 @@ button {
 .small-section {
 	margin: 6px;
 	border: 5px ridge #A0FBA9;
+	padding: 3px;
 	background: #061f06;
 	background: -moz-linear-gradient(top, #061f06 0%, #113711 50%, #101B10 100%);
 	background: -webkit-linear-gradient(top, #061f06 0%, #113711 50%, #101B10 100%);
