@@ -24,7 +24,7 @@ button {
 	display: inline-block;
 }
 
-.big-section {
+.large-section {
 	border: 6px outset #B0B0FF;
 	background: #303030;
 	background: -moz-linear-gradient(-45deg, #303030 0%, #000040 50%, #101010 100%);
