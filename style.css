@@ -1,0 +1,32 @@
+body {
+	background-color: #000000;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 15px;
+	letter-spacing: -0.6px;
+	word-spacing: 0px;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-decoration: rgb(232, 230, 227);
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
+
+button {
+	border: 4px double #808080;
+	color: rgb(128, 255, 128);
+	font-size: 14px; line-height: 14px; padding: 7px; border-radius: 10px;
+	background-image: linear-gradient(to right, rgb(0, 64, 0) 0%, rgb(0, 128, 0) 50%, rgb(0, 64, 0) 100%);
+	box-shadow: rgb(0, 0, 0) 0px 0px 50px 15px;
+	display: inline-block;
+}
+
+.big-section {
+	border: 6px outset #B0B0FF;
+}
+.medium-section {
+
+}
+.small-section {
+	
+}
