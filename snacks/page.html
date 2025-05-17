@@ -1,67 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<link href="thethunderwolf.github.io/lesson-stuff/style.css" rel="stylesheet" type="text/css">
-	<title>Ordering Pizza</title>
-</head>
-
-<body onload=showName()>
-<h1 id="displayName">Welcome, user</h1>
-
-<label>Choose a Snack:</label>
-
-<select id="snack" onchange="priceCalc()"> 
-<option value= "none" data-price="0">--None--</option>
-<option value= "chips" data-price="600">chips [₡600]</option>
-<option value= "cookies" data-price="1500">cookies [₡1500]</option>
-
-</select>
-<br>
-
-<label>Choose a Drink:</label>
-
-<select id="drink" onchange="priceCalc()"> 
-<option value= "none" data-price="0">--None--</option>
-<option value= "water" data-price="400">water [₡400]</option>
-<option value= "lemonade" data-price="1250">lemonade [₡1250]</option>
-
-</select>
-
-<br>
-
-<p id = "total">Price: ₡0.00</p>
-<button onclick="pay()">Pay</button>
-
-<script>
-	function showName() {
-		const params = new URLSearchParams(window.location.search);
-		const name = params.get("name") || "Guest";
-		document.getElementById("displayName").textContent = "Welcome, " + name;
-	}
-
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link href="thethunderwolf.github.io/lesson-stuff/style.css" rel="stylesheet" type="text/css">
+		<title>Order Snacks</title>
+	</head>
 	
-	function priceCalc(){
+	<body onload=showName()>
+		<h1 id="displayName">Welcome, user</h1>
 		
-		const dropdown = document.querySelector("#snack")
-		const selectedOption = dropdown.options[dropdown.selectedIndex]
-		const snackPrice = selectedOption.getAttribute("data-price")
+		<div class="large-section">
+			
+			<div class = "medium-section">
+				<label>Choose a Snack:</label>
+				
+				<select id="snack" onchange="priceCalc()"> 
+					<option value= "none" data-price="0">--None--</option>
+					<option value= "chips" data-price="600">chips [₡600]</option>
+					<option value= "cookies" data-price="1500">cookies [₡1500]</option>
+					
+				</select>
+				
+			</div>
+			
+			<br>
+			<div class = "medium-section">
+				<label>Choose a Drink:</label>
+				
+				<select id="drink" onchange="priceCalc()"> 
+					<option value= "none" data-price="0">--None--</option>
+					<option value= "water" data-price="400">water [₡400]</option>
+					<option value= "lemonade" data-price="1250">lemonade [₡1250]</option>
+					
+				</select>
+				
+			</div>
+			
+			<br>
+			
+			<p id = "total">Price: ₡0.00</p>
+			<button onclick="pay()">Pay</button>
+			
+		</div>
 		
-		const dropdown2 = document.querySelector("#drink")
-		const selectedOption2 = dropdown2.options[dropdown2.selectedIndex]
-		const drinkPrice = selectedOption2.getAttribute("data-price")
+		<script>
+			function showName() {
+				const params = new URLSearchParams(window.location.search);
+				const name = params.get("name") || "Guest";
+				document.getElementById("displayName").textContent = "Welcome, " + name;
+			}
 		
-		const formattedPrice = (parseInt(snackPrice)+parseInt(drinkPrice))
-		const totalPrice = document.getElementById("total").textContent = "Price: ₡"+ formattedPrice
-	}
-	function pay() {
-		const snack = document.querySelector("#snack").getAttribute("data-price")
-		const drink = document.querySelector("#drink").getAttribute("data-price")
-		const price = (parseInt(snack)+parseInt(drink));
-		window.location.href = "checkout.html?price=" + encodeURIComponent(""+price);
-	}
-
-</script>
-</body>
+			
+			function priceCalc(){
+				
+				const dropdown = document.querySelector("#snack")
+				const selectedOption = dropdown.options[dropdown.selectedIndex]
+				const snackPrice = selectedOption.getAttribute("data-price")
+				
+				const dropdown2 = document.querySelector("#drink")
+				const selectedOption2 = dropdown2.options[dropdown2.selectedIndex]
+				const drinkPrice = selectedOption2.getAttribute("data-price")
+				
+				const formattedPrice = (parseInt(snackPrice)+parseInt(drinkPrice))
+				const totalPrice = document.getElementById("total").textContent = "Price: ₡"+ formattedPrice
+			}
+			function pay() {
+				const snack = document.querySelector("#snack").getAttribute("data-price")
+				const drink = document.querySelector("#drink").getAttribute("data-price")
+				const price = (parseInt(snack)+parseInt(drink));
+				window.location.href = "checkout.html?price=" + encodeURIComponent(""+price);
+			}
+		
+		</script>
+	</body>
 </html>
