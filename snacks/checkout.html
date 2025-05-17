@@ -5,7 +5,6 @@
 	<link href="https://thethunderwolf.github.io/lesson-stuff/style.css" rel="stylesheet" type="text/css">
 	<title>Snack Checkout</title>
 	</head>
-	-
 	<body onload="showPrice()">
 	
 		<h1 id="payplease">Checkout Order</h1>
@@ -18,29 +17,29 @@
 		
 		<script>
 	
-	      function showPrice() {
-			const params = new URLSearchParams(window.location.search);
-			const price = parseInt(params.get("price")) || "Error";
-		      if (typeOf(price) != int || price == NaN){
-			document.getElementById("pay").textContent = "Payment Calculation Error";
+			function showPrice() {
+				const params = new URLSearchParams(window.location.search);
+				const price = parseInt(params.get("price")) || "Error";
+				if (typeof(price) != int || price == NaN){
+					document.getElementById("pay").textContent = "Payment Calculation Error";
+					}
+				else { 
+					document.getElementById("pay").textContent = "Pay ₡" + price;
 				}
-		      else { 
-			      document.getElementById("pay").textContent = "Pay ₡" + price;
-			   }
 			}
 	
 	        function pay() {
-	  		  const params = new URLSearchParams(window.location.search);
-	  		  const price = parseInt(params.get("price")) || "Error";
-	        if (typeOf(price) != int || price == NaN){
-	          document.getElementById("payplease").textContent = "Payment Failed"
-			alert("Failed payment :(")
-	        }
-	        else {
-	          document.getElementById("payplease").textContent = "Payment Successful"
-			alert("Payment successful. Thank you for shopping with us.")
-	        }
-	        };
+	  			const params = new URLSearchParams(window.location.search);
+	  			const price = parseInt(params.get("price")) || "Error";
+		    	if (typeof(price) != int || price == NaN){
+		        	document.getElementById("payplease").textContent = "Payment Failed"
+				alert("Failed payment :(")
+	        	}
+	        	else {
+	        		document.getElementById("payplease").textContent = "Payment Successful"
+					alert("Payment successful. Thank you for shopping with us.")
+				}
+			};
 	    </script>
     
   </body>
