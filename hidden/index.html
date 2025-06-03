@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link href="https://thethunderwolf.github.io/lesson-stuff/style.css" rel="stylesheet" type="text/css">
+	<title>Press the button</title>
+</head>
+
+<body>
+
+	<h1>Press the button</h1>
+
+	<div class="large-section">
+		
+		<button onclick="show("hidden-div")">Press this</button>
+		
+		<div class="medium-section" style="display:none" id="hidden-div">
+			
+			<p>This was previously invisible!</p>
+		
+		</div>
+	<script>
+		
+		function show(target){
+			const thing = document.getElementById(target)
+			thing.style = ""
+		}
+		
+	</script>
+	
+</body>
+</html>
