@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link href="https://thethunderwolf.github.io/lesson-stuff/style.css" rel="stylesheet" type="text/css">
+	<title>Pizza Reciept</title>
+</head>
+
+<body onload=decode()>
+
+	<h1>Pizza Order Reciept</h1>
+
+	<div class="large-section">
+		<p id="name">Loading...</p>
+		<hr>
+		<p id="price">Loading...</p>
+	</div>
+	
+	<script>
+		function decode(){
+			
+			const params = new URLSearchParams(window.location.search); //Extracts query parameters from the URL.
+		    const price = params.get("price") || "Error: price missing or invalid";
+			const name = params.get("name") || "guest";
+		    document.getElementById("price").textContent = "Total Price: ₡" + price;
+			document.getElementById("name").textContent = "Your Name: " + name;
+	
+		}
+	</script>
+	
+</body>
+</html>
