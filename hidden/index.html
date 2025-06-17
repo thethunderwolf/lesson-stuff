@@ -14,7 +14,7 @@
 
 	<div class="large-section">
 		
-		<button onclick="show(\"hidden-div\")">Press this</button>
+		<button onclick="show()">Press this</button>
 		
 		<div class="medium-section" style="display:none" id="hidden-div">
 			
@@ -23,8 +23,8 @@
 		</div>
 	<script>
 		
-		function show(target){
-			const thing = document.getElementById(target)
+		function show(){
+			const thing = document.getElementById("hidden-div")
 			thing.style.display = "block"
 		}
 		
