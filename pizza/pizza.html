@@ -45,7 +45,7 @@
 		<p id="toppings">Topping(s) Selected: None</p>
 		<p id="price">Price: ₡0</p>
 		<p>Add a tip: <input type="number" id="tip"></p>
-		<p>Enter your name: <input type=text></p>
+		<p>Enter your name: <input type="text" id="nameinput"></p>
 		<button onclick="next()">Submit</button>
 			
 	</div>
@@ -112,7 +112,12 @@
 			
 			})
 		})
-		
+
+		function next(){
+
+			window.location.href = "reciept.html?name=" + encodeURIComponent(document.getElementById("nameinput").value) + "&price=" + encodeURIComponent(price);
+			
+		}
 		
 		
 	</script>
