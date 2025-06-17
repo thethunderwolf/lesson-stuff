@@ -115,7 +115,7 @@
 
 		function next(){
 
-			window.location.href = "reciept.html?name=" + encodeURIComponent(document.getElementById("nameinput").value) + "&price=" + encodeURIComponent(price);
+			window.location.href = "reciept.html?name=" + encodeURIComponent(document.getElementById("nameinput").value) + "&price=" + encodeURIComponent(price + document.getElementById("tip").value);
 			
 		}
 		
